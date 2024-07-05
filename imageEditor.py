@@ -1,10 +1,10 @@
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import os
 
-path = "/Users/sukhmandeep/Documents/Photos"  # Replace with the correct folder for unedited images
-pathOut = "/Users/sukhmandeep/Documents/editedimgs"  # Replace with the correct folder for edited images
+# Replace these with the correct folders for your unedited and edited images
+path = "path/to/your/unedited/images"
+pathOut = "path/to/your/edited/images"
 
-# Ensure the output directory exists
 # Ensure the output directory exists
 os.makedirs(pathOut, exist_ok=True)
 
@@ -12,7 +12,7 @@ for filename in os.listdir(path):
     if filename.endswith(('.jpg', '.jpeg', '.png', '.bmp', '.tiff')):
         img = Image.open(f"{path}/{filename}")
 
-        # Sharpening, converting to black and white, and rotating
+        # Apply a sharpening filter
         edit = img.filter(ImageFilter.SHARPEN)
 
         # Optionally convert to black and white (comment out if color is desired)
